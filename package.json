@@ -2,9 +2,13 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "browserList" : "last 2 versions",
   "scripts": {
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amankumar23429/namaste-react.git"
   },
   "author": "Aman Kumar",
   "license": "ISC",
