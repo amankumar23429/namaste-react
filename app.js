@@ -1,26 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// const heading = React.createElement("h1", {}, "Hello World from React");
-// const root = ReactDOM.createRoot(document.getElementById("container"));
-// root.render(heading);
 
-/* <div id="parent">
-    <div id="child1">
-        <h1>This is the h1 tag</h1>
-        <h2>This is the h2 tag</h2>
-    </div>
-    <div id="child2">
-        <h1>This is the h1 tag</h1>
-        <h2>This is the h2 tag</h2>
-    </div>
-</div> */
+const HeadingSpan = <span>Title </span>;
+const TitleHeading = () => (
+  <h1 className="head" tabIndex="5">
+    {HeadingSpan}
+    Namaste Javascript from JSX
+  </h1>
+);
 
-const heading = React.createElement("div", { id: "parent" },
-    [
-        React.createElement("div", { id: "child1" }, [React.createElement("h1", {}, "This is the h1 tag"), React.createElement("h2", {}, "This is the h2 tag")]),
-        React.createElement("div", { id: "child2" }, [ React.createElement("h1", {}, "This is the h1 tag"), React.createElement("h2", {}, "This is the h2 tag")])
-    ]
-)
-
-const root = ReactDOM.createRoot(document.getElementById("container"));
-root.render(heading);
+// React Functional Component
+// component composition ==> component function containing another functional component
+const HeadingComponent = () => (
+  <div id="container">
+    <TitleHeading />
+    {TitleHeading()}
+    <TitleHeading></TitleHeading>
+    {/* these all are doing same work */}
+    <h1 className="heading" tabIndex="5">
+      Namaste Javascript Functional Component
+    </h1>
+  </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
