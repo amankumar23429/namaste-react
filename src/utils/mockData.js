@@ -1,27 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://img.freepik.com/premium-vector/online-food-app-icon-food-shop-location-logo-also-online-resturent-location-template_608547-155.jpg?w=2000"
-        ></img>
-      </div>
-      <div className="nav-container">
-        <ul className="nav-items">
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const resList = [
   {
     type: "restaurant",
@@ -1907,48 +1883,4 @@ const resList = [
   },
 ];
 
-const RestaurantCard = ({ resData }) => {
-  const { name, avgRating, cuisines, area } = resData?.data;
-  return (
-    <div className="res-card">
-      <img
-        className="res-image"
-        alt="res logo"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.data.cloudinaryImageId
-        }
-      ></img>
-      <h3>{name}</h3>
-      <h3>{avgRating}</h3>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{area}</h3>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => {
-          return (
-            <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
