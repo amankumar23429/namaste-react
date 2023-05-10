@@ -70,3 +70,24 @@
 .search-btn {
   margin-left: 5px;
 }
+
+.shimmer-card {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+  margin: 15px;
+}
+
+.menu-img {
+  width: 300px;
+  height: 350px;
+  margin: 15px;
+}
+
+.res-menu {
+  display: flex;
+}
+
+.res-menu > ul {
+  list-style-type: none;
+}
