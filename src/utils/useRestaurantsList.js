@@ -3,7 +3,7 @@ import { ALL_RES_URL } from "./constants";
 
 const useRestaurantsList = () => {
   const [listOfRestaurants, setListofRestaurants] = useState([]);
-  const [filterListOfRestaurants, setFilterListOfRestaurants] = useState([]);
+  // const [filterListOfRestaurants, setFilterListOfRestaurants] = useState([]);
   useEffect(() => {
     getRestaurants();
   }, []);
@@ -12,8 +12,8 @@ const useRestaurantsList = () => {
     const data = await fetch(ALL_RES_URL);
     const json = await data.json();
     setListofRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilterListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // setFilterListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-  return [listOfRestaurants, filterListOfRestaurants];
+  return listOfRestaurants;
 };
 export default useRestaurantsList;
